@@ -17,7 +17,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: hello-artifact
-        path: /artifacts/hello.txt
+        path: ./artifacts/hello.txt
 
 
   dowmload:
@@ -35,9 +35,9 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: hello-artifact
-        path: /artifacts/hello.txt
+        path: ./artifacts/hello.txt
         # path: ./artifacts/hello.txt
 
     - name: Display
       # run: cat ./artifacts/hello.txt
-      run: cat /artifacts/hello.txt
+      run: cat ./artifacts/hello.txt
