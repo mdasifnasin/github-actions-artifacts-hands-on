@@ -17,4 +17,23 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: hello-artifact
-        path: hello.txt
+        path: ./artifacts/hello.txt
+
+
+  dowmload:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    # - name: Checkout code
+    #   uses: actions/checkout@v2
+
+    # - name: Create a text file
+    #   run: echo "Hello, world!" > hello.txt
+
+    - name: Download text file
+      uses: actions/download-artifact@v2
+      with:
+        name: hello-artifact
+        path: ./artifacts/hello.txt
+      run: cat ./artifacts/hello.txt
