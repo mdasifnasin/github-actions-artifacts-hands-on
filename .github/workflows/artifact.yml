@@ -26,12 +26,12 @@ jobs:
       steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Archive text file
+      - name: Downloading the file
         uses: actions/download-artifact@v4
         with:
           name: hello-artifact
       - name: Viewing the file
         run: |
-          cat ./artifacts/hello.txt
+          cat hello.txt
           echo "Success"
       
