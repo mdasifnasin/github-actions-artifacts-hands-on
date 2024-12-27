@@ -32,6 +32,8 @@ jobs:
           name: hello-artifact
       - name: Viewing the file
         run: |
+          pwd
+          ls -ltra
           cat ./artifacts/hello.txt
           echo "Success"
       
