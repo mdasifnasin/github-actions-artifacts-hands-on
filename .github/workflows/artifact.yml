@@ -17,7 +17,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: hello-artifact
-        path: hello.txt
+        path: ./artifacts/hello.txt
 
   download:
       needs: build
@@ -32,6 +32,6 @@ jobs:
           name: hello-artifact
       - name: Viewing the file
         run: |
-          cat hello.txt
+          cat ./artifacts/hello.txt
           echo "Success"
       
